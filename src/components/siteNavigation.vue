@@ -1,9 +1,10 @@
 <template>
-  <header class="sticky top-0 shadow-lg bg-weather-primary">
+  <header class="sticky top-0 bg-gray-900 shadow-lg">
     <nav class="container flex flex-col items-center gap-4 py-6 text-white sm:flex-row">
       <RouterLink :to="{ name: 'home' }">
         <div class="flex items-center gap-3">
-          <i class="text-2xl fa-solid fa-sun"></i>
+          <img width="48" height="48" src="https://img.icons8.com/fluency/48/partly-cloudy-day.png"
+            alt="partly-cloudy-day" />
           <p class="text-2xl">The Local Weather</p>
         </div>
       </RouterLink>
