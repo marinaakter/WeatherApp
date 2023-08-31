@@ -1,30 +1,19 @@
 <template>
   <header class="sticky top-0 bg-gray-900 shadow-lg">
-    <nav
-      class="container flex flex-col items-center gap-4 py-6 text-white sm:flex-row"
-    >
+    <nav class="container flex flex-col items-center gap-4 py-6 text-white sm:flex-row">
       <RouterLink :to="{ name: 'home' }">
         <div class="flex items-center gap-3">
-          <img
-            width="48"
-            height="48"
-            src="https://img.icons8.com/fluency/48/partly-cloudy-day.png"
-            alt="partly-cloudy-day"
-          />
+          <img width="48" height="48" src="https://img.icons8.com/fluency/48/partly-cloudy-day.png"
+            alt="partly-cloudy-day" />
           <p class="text-2xl">The Local Weather</p>
         </div>
       </RouterLink>
 
       <div class="flex justify-end flex-1 gap-3">
-        <i
-          class="text-xl fa-solid fa-circle-info hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="toggleModel"
-        ></i>
-        <i
-          class="text-xl fa-solid fa-plus hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="addCity"
-          v-if="route.query.preview"
-        ></i>
+        <i class="text-xl duration-150 cursor-pointer fa-solid fa-circle-info hover:text-weather-secondary"
+          @click="toggleModel"></i>
+        <i class="text-xl duration-150 cursor-pointer fa-solid fa-plus hover:text-weather-secondary" @click="addCity"
+          v-if="route.query.preview"></i>
       </div>
 
       <BaseModel :modelActive="modelActive" @Close-modal="toggleModel">
@@ -61,8 +50,9 @@
 <script setup>
 import { ref } from "vue";
 import { uid } from "uid";
-import { RouterLink,useRoute,useRouter } from "vue-router";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 import BaseModel from "./BaseModel.vue";
+
 
 const savedCities = ref([]);
 const route = useRoute();

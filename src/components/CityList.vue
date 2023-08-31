@@ -13,7 +13,7 @@ const savedCities = ref([]);
 const getCities = async () => {
   if (localStorage.getItem("savedCities")) {
     savedCities.value = JSON.parse(localStorage.getItem("savedCities"));
-
+    console.log(savedCities.value);
     const requests = [];
     savedCities.value.forEach((city) => {
       requests.push(
@@ -32,5 +32,6 @@ const getCities = async () => {
   }
 };
 
-await getCities();
+getCities();
+
 </script>
