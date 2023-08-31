@@ -41,7 +41,6 @@
 import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import CityList from "../components/CityList.vue";
 
 
 const router = useRouter();
